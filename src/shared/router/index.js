@@ -7,6 +7,16 @@ export const Router = () => {
     <Fragment>
       <Routers>
         <Route path="/login" element={<Login />} />
+
+        <Route
+          exact
+          path="/"
+          element={
+            <ProtectRouteDriver>
+              <Home />
+            </ProtectRouteDriver>
+          }
+        />
       </Routers>
     </Fragment>
   );
