@@ -5,20 +5,33 @@ import { useNavigate } from "react-router";
 import jwt_decode from "jwt-decode";
 
 export const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+
   return (
     <div className="LoginPage">
-      <div class="form-wrapper">
+      <div className="form-wrapper">
         <h2>Login</h2>
-        <form action="#">
-          <div class="form-control">
-            <input type="text" required />
+        <form onSubmit={(e) => handleLogin(e)}>
+          <div className="form-control">
+            <input
+              type="text"
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
             <label>Login</label>
           </div>
-          <div class="form-control">
-            <input type="password" required />
+          <div className="form-control">
+            <input
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
             <label>Password</label>
           </div>
-          <button type="submit">Login</button>
+          <button>Login</button>
         </form>
       </div>
     </div>
