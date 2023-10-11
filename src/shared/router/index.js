@@ -1,12 +1,22 @@
 import { Fragment } from "react";
 import { Routes as Routers, Route } from "react-router";
-import { Login } from "../../pages";
-
+import { Login, Home } from "../../pages";
+import { ProtectRouteDriver } from "../../auth";
 export const Router = () => {
   return (
     <Fragment>
       <Routers>
-        <Route exact path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+
+        <Route
+          exact
+          path="/"
+          element={
+            <ProtectRouteDriver>
+              <Home />
+            </ProtectRouteDriver>
+          }
+        />
       </Routers>
     </Fragment>
   );
