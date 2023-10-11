@@ -10,6 +10,28 @@ export const Login = () => {
 
   const navigate = useNavigate();
 
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const driver = { username, password };
+
+    axiosInstance
+      .post("/driver/login", driver)
+      .then(({ data: { data } }) => {
+        localStorage.setItem("token", data);
+        const decode = jwt_decode(data);
+        localStorage.setItem("role", decode.user.role);
+        success_notify("Login qildingiz!");
+        setTimeout(() => {
+          window.location.assign("/");
+        }, 2500);
+        navigate("/");
+      })
+      .catch(({ response: { data } }) => {
+        error_notify(data.error);
+      });
+  };
+
   return (
     <div className="LoginPage">
       <div className="form-wrapper">
