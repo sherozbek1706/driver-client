@@ -1,0 +1,20 @@
+.Sitebar {
+  position: fixed;
+  bottom: 0;
+  width: 800px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #040404;
+  box-shadow: rgba(149, 231, 7, 0.722) 0px 12px 28px 0px,
+    rgba(127, 231, 8, 0.763) 0px 2px 4px 0px,
+    rgba(208, 202, 202, 0.209) 0px 0px 0px 1px inset;
+}
+.Sitebar__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}

@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import jwt_decode from "jwt-decode";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +7,7 @@ export const ProtectRouteDriver = ({ children }) => {
   const navigate = useNavigate();
   useEffect(() => {
     try {
-      const token = localStorage.getItem("token");
+      const token = Cookies.get("token");
       const decoded = jwt_decode(token);
       const userRole = decoded.user.role;
 

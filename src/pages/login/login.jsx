@@ -3,7 +3,7 @@ import "./login.css";
 import { axiosInstance, error_notify, success_notify } from "../../shared";
 import { useNavigate } from "react-router";
 import jwt_decode from "jwt-decode";
-
+import Cookies from "js-cookie";
 export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -18,9 +18,9 @@ export const Login = () => {
     axiosInstance
       .post("/driver/login", driver)
       .then(({ data: { data } }) => {
-        localStorage.setItem("token", data);
+        Cookies.set("token", data);
         const decode = jwt_decode(data);
-        localStorage.setItem("role", decode.user.role);
+        Cookies.set("role", decode.user.role);
         success_notify("Login qildingiz!");
         setTimeout(() => {
           window.location.assign("/");

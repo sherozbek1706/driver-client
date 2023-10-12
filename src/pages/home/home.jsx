@@ -1,4 +1,9 @@
+import { Sitebar } from "../../layouts";
 import "./home.css";
 export const Home = () => {
-  return <h1>Home</h1>;
+  return (
+    <div className="Home">
+      <Sitebar />
+    </div>
+  );
 };

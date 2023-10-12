@@ -57,8 +57,8 @@
   width: 100%;
   padding: 16px 0;
   font-size: 1rem;
-  background: #e50914;
-  color: #fff;
+  background: #ffd500c2;
+  color: #000;
   font-weight: 500;
   border-radius: 4px;
   border: none;
@@ -68,7 +68,7 @@
   transition: 0.1s ease;
 }
 .LoginPage form button:hover {
-  background: #c40812;
+  background: #ffd300;
 }
 .LoginPage .form-wrapper :where(label) {
   color: #b3b3b3;
