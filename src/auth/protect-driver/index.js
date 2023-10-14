@@ -15,7 +15,6 @@ export const ProtectRouteDriver = ({ children }) => {
         navigate("/login");
       }
     } catch (error) {
-      console.error("Error decoding JWT:", error);
       navigate("/login");
     }
   }, [navigate]);
