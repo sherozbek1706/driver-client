@@ -15,6 +15,18 @@ export const ActiveDriver = ({ active, fetchData }) => {
     }
   };
 
+  const handleSwitchOnActive = async () => {
+    try {
+      const response = await axiosInstance.patch("/driver/active/on");
+      if (response.status == 200) {
+        success_notify("Siz ishni boshladingiz");
+        fetchData();
+      }
+    } catch (error) {
+      errorHandler(error);
+    }
+  };
+
   return (
     <div className="ActiveDriver">
       {active ? (
