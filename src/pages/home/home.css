@@ -1,6 +1,9 @@
 .Home {
+  position: relative;
+  color: #fff;
   width: 800px;
-  height: 100vh;
+  height: calc(100vh);
+  padding-bottom: 90px;
   background-color: #000;
-  overflow: hidden;
+  overflow-x: hidden;
 }
