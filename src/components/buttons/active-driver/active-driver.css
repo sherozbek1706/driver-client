@@ -1,0 +1,24 @@
+.ActiveDriver {
+  width: 100%;
+  padding: 10px 15px;
+}
+.ActiveDriver_btn {
+  width: 100%;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: -1px;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: none;
+  box-shadow: rgba(130, 130, 138, 0.25) 0px 2px 5px -1px,
+    rgba(244, 244, 244, 0.3) 0px 1px 3px -1px;
+}
+.ActiveDriver_btn.active {
+  background-color: #cd3232;
+  color: #fff;
+}
+.ActiveDriver_btn.no_active {
+  background-color: #ffff00;
+  color: #000;
+}
