@@ -1,0 +1,56 @@
+.Maps {
+  position: relative;
+  color: #fff;
+  width: 800px;
+  height: calc(100vh);
+  padding-bottom: 90px;
+  background-color: #000;
+  overflow-x: hidden;
+}
+.Maps__container {
+  width: 100%;
+  padding: 10px 15px;
+}
+.Maps__box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #fed866a9;
+  margin: 10px 0;
+  box-shadow: rgba(164, 164, 214, 0.25) 0px 50px 100px -20px,
+    rgba(214, 184, 184, 0.3) 0px 30px 60px -30px,
+    rgba(202, 213, 224, 0.35) 0px -2px 6px 0px inset;
+}
+.Maps__address {
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+.Maps__details {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.Maps__details .icon {
+  color: #000;
+  font-size: 22px;
+}
+.Maps__count {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
