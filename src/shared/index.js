@@ -1,3 +1,4 @@
 export * from "./router";
 export * from "./services";
-export * from "./notify"
+export * from "./notify";
+export * from "./handler/errors";

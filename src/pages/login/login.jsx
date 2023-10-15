@@ -24,7 +24,7 @@ export const Login = () => {
         success_notify("Login qildingiz!");
         setTimeout(() => {
           window.location.assign("/");
-        }, 2500);
+        }, 500);
         navigate("/");
       })
       .catch(({ response: { data } }) => {
