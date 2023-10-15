@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Routes as Routers, Route } from "react-router";
-import { Login, Home, News, Profile, Maps } from "../../pages";
+import { Login, Home, News, Profile, Maps, DashboardLogin } from "../../pages";
 import { ProtectRouteDriver } from "../../auth";
 export const Router = () => {
   return (
@@ -44,6 +44,8 @@ export const Router = () => {
             </ProtectRouteDriver>
           }
         />
+
+        <Route exact path="/dashboard/login" element={<DashboardLogin />} />
       </Routers>
     </Fragment>
   );
