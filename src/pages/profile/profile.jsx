@@ -9,6 +9,22 @@ export const Profile = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState({});
 
+  useEffect(() => {
+    setLoading(true);
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axiosInstance.get("/driver/me");
+      const driver = response.data.data;
+      console.log(driver);
+      setData(driver);
+      setLoading(false);
+    } catch (error) {
+      errorHandler(error);
+    }
+  };
 
   if (loading) {
     return <Loader />;
