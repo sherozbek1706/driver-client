@@ -1,0 +1,12 @@
+.DashboardLogin {
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+}
+.DashboardLogin form {
+  display: flex;
+  flex-direction: column;
+}
+.DashboardLogin form * {
+  margin: 10px 0;
+}
