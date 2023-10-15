@@ -6,11 +6,16 @@ import { axiosInstance } from "../../shared/services";
 import { errorHandler } from "../../shared/handler/errors";
 export const Maps = () => {
   const [loading, setLoading] = useState(true);
+  const [active, setActive] = useState(true);
   const [data, setData] = useState([]);
   useEffect(() => {
     setLoading(true);
     fetchData();
   }, []);
+
+  const changeActive = () => {
+    setActive(false);
+  };
 
   const fetchData = async () => {
     try {
@@ -34,6 +39,9 @@ export const Maps = () => {
     <div className="Maps">
       <Header title={"Manzillar"} />
       <div className="Maps__container">
+        {!active ? (
+          <NoActive />
+        ) : (
           <Fragment>
             {data.map((item) => (
               <div className="Maps__box" key={item.id}>
@@ -45,6 +53,7 @@ export const Maps = () => {
             ))}
             <h1 className="Maps__count">- {data.length} ta manzil topildi -</h1>
           </Fragment>
+        )}
       </div>
       <Sitebar />
     </div>
