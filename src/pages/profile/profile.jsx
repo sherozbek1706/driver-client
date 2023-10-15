@@ -6,6 +6,13 @@ import "./profile.css";
 import { errorHandler } from "../../shared/handler/errors";
 import { api } from "../../utils";
 export const Profile = () => {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState({});
+
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div className="Profile">
       <Header title={"Mening Hisobim"} />
