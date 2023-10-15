@@ -5,6 +5,15 @@ import "./maps.css";
 import { axiosInstance } from "../../shared/services";
 import { errorHandler } from "../../shared/handler/errors";
 export const Maps = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(true);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div className="Maps">
       <Header title={"Manzillar"} />
