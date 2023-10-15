@@ -1,0 +1,64 @@
+.Profile {
+  position: relative;
+  color: #fff;
+  width: 800px;
+  height: calc(100vh);
+  padding-bottom: 90px;
+  background-color: #000;
+  overflow-x: hidden;
+}
+.Profile__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 150px;
+}
+.Profile__field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid rgba(153, 205, 50, 0.637);
+  box-shadow: rgba(81, 255, 0, 0.1) 0px 1px 1px 0px inset,
+    rgba(234, 255, 1, 0.25) 0px 50px 100px -20px,
+    rgba(255, 225, 0, 0.3) 0px 30px 60px -30px;
+}
+.Profile__image img {
+  height: 100%;
+}
+.Profile__name {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Profile__name h1 {
+  font-size: 22px;
+}
+.Profile__detail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  overflow: auto;
+}
+.ProfileDetail__option {
+  border: 1px solid #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  justify-content: space-between;
+}
+
+.ProfileDetail__option.upto_down {
+  margin: 20px 0;
+}
