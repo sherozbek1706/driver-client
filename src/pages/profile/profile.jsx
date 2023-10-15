@@ -81,5 +81,13 @@ export const Profile = () => {
           <p>Moshina rangi:</p>
           <p>{data.car_color}</p>
         </div>
+        <div className="ProfileDetail__option upto_down">
+          <p>Hozir:</p>
+          <p>{data.active ? "ISHDA" : "ISHDA EMAS"}</p>
+        </div>
+      </div>
+      <ActiveDriver active={data.active} fetchData={fetchData} />
+      <Sitebar />
+    </div>
   );
 };
