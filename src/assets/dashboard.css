@@ -24,4 +24,10 @@
 }
 .DashboardHeadOption__button:hover {
   opacity: 1;
+  cursor: pointer;
+}
+
+.DashboardHeadOption__active {
+  opacity: 1;
+  cursor: pointer;
 }
