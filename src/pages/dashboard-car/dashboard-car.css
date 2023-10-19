@@ -1,0 +1,86 @@
+.DashboardCars {
+  width: calc(100%);
+  height: 100%;
+}
+.DashboardCars__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px 20px;
+}
+.DashboardCars__row,
+.DashboardCars__row_head {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  color: #fff;
+  height: 50px;
+  background-color: #222;
+}
+.DashboardCars__row:nth-child(2n-1) {
+  background-color: #222222c3;
+}
+.DashboardCars__row p,
+.DashboardCars__row_head p {
+  padding: 0 20px;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DashboardCarsRow__id {
+  width: 8%;
+}
+.DashboardCarsRow__car_model {
+  width: 15%;
+}
+.DashboardCarsRow__car_region {
+  width: 15%;
+}
+.DashboardCarsRow__car_region_number {
+  width: 8%;
+}
+.DashboardCarsRow__number {
+  width: 12%;
+}
+.DashboardCarsRow__year {
+  width: 12%;
+}
+.DashboardCarsRow__color {
+  width: 10%;
+}
+.DashboardCarsRow__option {
+  width: 20%;
+  height: 100%;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DashboardCarsRow__option .icon {
+  width: 30px;
+  border: none;
+  border-radius: 8px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  margin: 0 5px;
+  opacity: 0.5;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition: 0.4s ease-in-out;
+}
+
+.DashboardCarsRow__option .icon:hover {
+  opacity: 1;
+}

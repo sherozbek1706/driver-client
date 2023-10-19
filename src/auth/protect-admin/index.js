@@ -12,9 +12,9 @@ export const ProtectRouteAdmin = ({ children }) => {
       const decoded = jwt_decode(token);
       const userRole = decoded.user.role;
 
-      if (userRole !== "admin" && userRole !== "super_admin") {
-        navigate("/dashboard/login");
-      }
+      //if (userRole !== "admin" && userRole !== "super_admin") {
+      // navigate("/dashboard/login");
+      //}
     } catch (error) {
       navigate("/dashboard/login");
     }
