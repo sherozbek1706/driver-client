@@ -23,11 +23,13 @@ export const Sitebar = () => {
         </Link>
       </div>
       <div className="Sitebar__menu">
-        <i
-          className={`fa-solid fa-car icon ${
-            pathname == "/orders" ? "active" : ""
-          }`}
-        ></i>
+        <Link to={"/orders"}>
+          <i
+            className={`fa-solid fa-car icon ${
+              pathname == "/orders" ? "active" : ""
+            }`}
+          ></i>
+        </Link>
       </div>
       <div className="Sitebar__menu">
         <Link to={"/news"}>
