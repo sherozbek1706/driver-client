@@ -6,6 +6,7 @@ import { api } from "./utils";
 import io from "socket.io-client";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Bar } from "./layouts";
 
 export const socket = io.connect(api);
 
@@ -22,6 +23,7 @@ function App() {
     // <Context.Provider value={context_data}>
     <div className="App">
       <Router />
+      <Bar />
       <ToastContainer
         position="top-right"
         autoClose={1200}
