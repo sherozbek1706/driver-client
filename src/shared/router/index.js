@@ -213,6 +213,15 @@ export const Router = () => {
           }
         />
 
+        <Route
+          path="/dashboard/driver/edit/:id"
+          element={
+            <ProtectRouteAdmin>
+              <AddDriverDashboard />
+            </ProtectRouteAdmin>
+          }
+        />
+
       </Routers>
     </Fragment>
   );
