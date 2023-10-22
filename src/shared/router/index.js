@@ -168,6 +168,15 @@ export const Router = () => {
             </ProtectRouteAdmin>
           }
         />
+
+        <Route
+          path="/dashboard/address/edit/:id"
+          element={
+            <ProtectRouteAdmin>
+              <AddAddressDashboard />
+            </ProtectRouteAdmin>
+          }
+        />
       </Routers>
     </Fragment>
   );
