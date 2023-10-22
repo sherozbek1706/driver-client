@@ -1,7 +1,31 @@
 import { Fragment } from "react";
 import { Routes as Routers, Route } from "react-router";
-import { Login, Home, News, Profile, Maps, DashboardLogin } from "../../pages";
-import { ProtectRouteDriver } from "../../auth";
+import {
+  Login,
+  Home,
+  News,
+  Profile,
+  Maps,
+  DashboardLogin,
+  Dashboard,
+  DashboardCars,
+  DashboardModel,
+  DashboardRegion,
+  DashboardAddress,
+  DashboardDriver,
+  AddModelDashboard,
+  AddRegionDashboard,
+  AddAddressDashboard,
+  AddCarDashboard,
+  AddDriverDashboard,
+  Order,
+  DriverOrder,
+  NotFound,
+  DashboarOrder,
+  AddOrderDashboard,
+} from "../../pages";
+// import Cookies from "js-cookie";
+import { ProtectRouteAdmin, ProtectRouteDriver } from "../../auth";
 export const Router = () => {
   return (
     <Fragment>
