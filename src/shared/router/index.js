@@ -55,6 +55,16 @@ export const Router = () => {
           }
         />
 
+        <Route
+          exact
+          path="/orders/:id"
+          element={
+            <ProtectRouteDriver>
+              <DriverOrder />
+            </ProtectRouteDriver>
+          }
+        />
+
       </Routers>
     </Fragment>
   );
