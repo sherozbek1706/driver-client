@@ -186,6 +186,15 @@ export const Router = () => {
             </ProtectRouteAdmin>
           }
         />
+        <Route
+          path="/dashboard/car/edit/:id"
+          element={
+            <ProtectRouteAdmin>
+              <AddCarDashboard />
+            </ProtectRouteAdmin>
+          }
+        />
+
       </Routers>
     </Fragment>
   );
