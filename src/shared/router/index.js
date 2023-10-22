@@ -240,6 +240,14 @@ export const Router = () => {
           }
         />
 
+        <Route
+          path="*"
+          element={
+            <ProtectRouteDriver>
+              <NotFound />
+            </ProtectRouteDriver>
+          }
+        />
       </Routers>
     </Fragment>
   );
