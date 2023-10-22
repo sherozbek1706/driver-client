@@ -99,6 +99,14 @@ export const Router = () => {
             </ProtectRouteAdmin>
           }
         />
+        <Route
+          path="/dashboard/region"
+          element={
+            <ProtectRouteAdmin>
+              <DashboardRegion />
+            </ProtectRouteAdmin>
+          }
+        />
       </Routers>
     </Fragment>
   );
