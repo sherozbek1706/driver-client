@@ -115,6 +115,15 @@ export const Router = () => {
             </ProtectRouteAdmin>
           }
         />
+        <Route
+          path="/dashboard/driver"
+          element={
+            <ProtectRouteAdmin>
+              <DashboardDriver />
+            </ProtectRouteAdmin>
+          }
+        />
+
       </Routers>
     </Fragment>
   );
