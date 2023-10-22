@@ -65,6 +65,16 @@ export const Router = () => {
           }
         />
 
+        <Route
+          exact
+          path="/dashboard/login"
+          element={
+            <ProtectRouteAdmin>
+              <DashboardLogin />
+            </ProtectRouteAdmin>
+          }
+        />
+
       </Routers>
     </Fragment>
   );
