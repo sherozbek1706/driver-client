@@ -124,6 +124,14 @@ export const Router = () => {
           }
         />
 
+        <Route
+          path="/dashboard/model/add"
+          element={
+            <ProtectRouteAdmin>
+              <AddModelDashboard />
+            </ProtectRouteAdmin>
+          }
+        />
       </Routers>
     </Fragment>
   );
