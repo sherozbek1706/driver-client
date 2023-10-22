@@ -222,6 +222,14 @@ export const Router = () => {
           }
         />
 
+        <Route
+          path="/dashboard/blocked/driver"
+          element={
+            <ProtectRouteAdmin>
+              <DashboardDriver />
+            </ProtectRouteAdmin>
+          }
+        />
       </Routers>
     </Fragment>
   );
