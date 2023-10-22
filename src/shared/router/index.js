@@ -45,7 +45,16 @@ export const Router = () => {
           }
         />
 
-        <Route exact path="/dashboard/login" element={<DashboardLogin />} />
+        <Route
+          exact
+          path="/orders"
+          element={
+            <ProtectRouteDriver>
+              <Order />
+            </ProtectRouteDriver>
+          }
+        />
+
       </Routers>
     </Fragment>
   );
