@@ -159,6 +159,15 @@ export const Router = () => {
             </ProtectRouteAdmin>
           }
         />
+
+        <Route
+          path="/dashboard/address/add"
+          element={
+            <ProtectRouteAdmin>
+              <AddAddressDashboard />
+            </ProtectRouteAdmin>
+          }
+        />
       </Routers>
     </Fragment>
   );
