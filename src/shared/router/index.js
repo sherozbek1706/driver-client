@@ -230,6 +230,16 @@ export const Router = () => {
             </ProtectRouteAdmin>
           }
         />
+
+        <Route
+          path="/dashboard/order"
+          element={
+            <ProtectRouteAdmin>
+              <DashboarOrder />
+            </ProtectRouteAdmin>
+          }
+        />
+
       </Routers>
     </Fragment>
   );
