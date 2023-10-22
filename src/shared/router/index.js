@@ -204,6 +204,15 @@ export const Router = () => {
           }
         />
 
+        <Route
+          path="/dashboard/order/add"
+          element={
+            <ProtectRouteAdmin>
+              <AddOrderDashboard />
+            </ProtectRouteAdmin>
+          }
+        />
+
       </Routers>
     </Fragment>
   );
