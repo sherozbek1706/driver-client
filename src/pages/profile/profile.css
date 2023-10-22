@@ -29,7 +29,7 @@
     rgba(255, 225, 0, 0.3) 0px 30px 60px -30px;
 }
 .Profile__image img {
-  height: 100%;
+  width: 100%;
 }
 .Profile__name {
   width: 100%;
