@@ -10,34 +10,34 @@ import { Bar } from "./layouts";
 
 export const socket = io.connect(api);
 
-// export const Context = React.createContext();
+export const Context = React.createContext();
 function App() {
   // useEffect(() => {
   //   Cookies.set("language", "kiril");
   // }, []);
-  // const context_data = {
-  //   lang: Cookies.get("language"),
-  // };
+  const context_data = {
+    lang: Cookies.get("language"),
+  };
 
   return (
-    // <Context.Provider value={context_data}>
-    <div className="App">
-      <Router />
-      <Bar />
-      <ToastContainer
-        position="top-right"
-        autoClose={1200}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-    </div>
-    // </Context.Provider>
+    <Context.Provider value={context_data}>
+      <div className="App">
+        <Router />
+        <Bar />
+        <ToastContainer
+          position="top-right"
+          autoClose={1200}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
+      </div>
+    </Context.Provider>
   );
 }
 

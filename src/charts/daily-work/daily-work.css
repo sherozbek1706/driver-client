@@ -1,0 +1,24 @@
+.DailyWork {
+  position: relative;
+  width: 100%;
+  left: -20px;
+  height: 300px;
+  padding: 10px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #000;
+}
+
+.DailyWork_Charts__title {
+  font-size: 14px;
+  margin: 10px;
+  padding-left: 50px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  color: #fff;
+  text-align: center;
+  /* width: 300px; */
+}

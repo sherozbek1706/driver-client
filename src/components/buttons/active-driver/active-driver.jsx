@@ -1,13 +1,16 @@
 import { errorHandler } from "../../../shared/handler/errors";
 import { success_notify } from "../../../shared/notify";
 import { axiosInstance } from "../../../shared/services";
+import { socket } from "../../../App";
 import "./active-driver.css";
+import { lotinKirilOtkazish } from "../../../utils/functions/lotin-kiril";
 export const ActiveDriver = ({ active, fetchData }) => {
   const handleSwitchOffActive = async () => {
     try {
       const response = await axiosInstance.patch("/driver/active/off");
       if (response.status == 200) {
         success_notify("Siz ishni to'xtatdingiz.");
+        socket.emit("change_activity_driver", { msg: "go" });
         fetchData();
       }
     } catch (error) {
@@ -20,6 +23,7 @@ export const ActiveDriver = ({ active, fetchData }) => {
       const response = await axiosInstance.patch("/driver/active/on");
       if (response.status == 200) {
         success_notify("Siz ishni boshladingiz");
+        socket.emit("change_activity_driver", { msg: "go" });
         fetchData();
       }
     } catch (error) {
@@ -34,14 +38,14 @@ export const ActiveDriver = ({ active, fetchData }) => {
           className="ActiveDriver_btn active"
           onClick={handleSwitchOffActive}
         >
-          Ishni to'xtatish
+          {lotinKirilOtkazish("Ishni to'xtatish")}
         </button>
       ) : (
         <button
           className="ActiveDriver_btn no_active"
           onClick={handleSwitchOnActive}
         >
-          Ishni Boshlash
+          {lotinKirilOtkazish("Ishni Boshlash")}
         </button>
       )}
     </div>
