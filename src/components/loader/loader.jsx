@@ -1,7 +1,7 @@
 import "./loader.css";
-export const Loader = () => {
+export const Loader = ({ still }) => {
   return (
-    <div className="Loader">
+    <div className={`Loader ${still}`}>
       <span className="loader"></span>
     </div>
   );
