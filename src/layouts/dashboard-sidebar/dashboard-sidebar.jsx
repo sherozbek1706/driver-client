@@ -1,7 +1,20 @@
+import Cookies from "js-cookie";
+import { info_notify } from "../../shared";
 import "./dashboard-sidebar.css";
 import { Link, useLocation } from "react-router-dom";
 export const DashboardSidebar = () => {
   const { pathname } = useLocation();
+
+  const handleLogout = () => {
+    info_notify("Tizimdan chiqdingiz!");
+    Object.keys(Cookies.get()).forEach((cookieName) => {
+      Cookies.remove(cookieName);
+    });
+    setTimeout(() => {
+      window.location.assign("/");
+    }, 1000);
+  };
+
   return (
     <div className="DashboardSidebar">
       <h1 className="DashboardSidebar__title">Dashboard Driver</h1>
@@ -13,8 +26,8 @@ export const DashboardSidebar = () => {
             pathname == "/dashboard" ? "active" : ""
           }`}
         >
-          <i className="fa-solid fa-house icon"></i>
-          Home
+          <i className="fa-solid fa-chart-line icon"></i>
+          Dashboard
         </Link>
       </div>
 
@@ -90,8 +103,32 @@ export const DashboardSidebar = () => {
         </Link>
       </div>
 
+      <div className="DashboardSidebar__link">
+        <Link
+          to={"/dashboard/driver-orders"}
+          className={`DashboardSidebar__href ${
+            pathname == "/dashboard/driver-orders" ? "active" : ""
+          }`}
+        >
+          <i className="fa-solid fa-people-carry-box icon"></i>
+          Driver Orders Panel
+        </Link>
+      </div>
+
+      <div className="DashboardSidebar__link">
+        <Link
+          to={"/dashboard/others"}
+          className={`DashboardSidebar__href ${
+            pathname == "/dashboard/others" ? "active" : ""
+          }`}
+        >
+          <i class="fa-solid fa-ellipsis icon"></i>
+          Others Panel
+        </Link>
+      </div>
+
       <div className="DashboardSidebar__link DashboardSidebar__skip">
-        <Link to={"/dashboard/logout"} className="DashboardSidebar__href">
+        <Link onClick={handleLogout} className="DashboardSidebar__href">
           <i className="fa-solid fa-arrow-right-from-bracket icon"></i>
           Login Out
         </Link>
