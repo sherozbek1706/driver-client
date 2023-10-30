@@ -17,7 +17,7 @@ export const AddCarDashboard = () => {
   const [modelArr, setModelArr] = useState([]);
   const [regionArr, setRegionArr] = useState([]);
   const [model, setModel] = useState("");
-  const [region, setRegion] = useState("");
+  const [region, setRegion] = useState("0");
   const { id } = useParams();
 
   const navigate = useNavigate();
@@ -39,10 +39,10 @@ export const AddCarDashboard = () => {
   };
 
   useEffect(() => {
+    fetchDataRM();
     if (id) {
       fetchData();
     }
-    fetchDataRM();
   }, [id]); // Use id as a dependency for useEffect
 
   const fetchDataRM = async () => {
@@ -55,6 +55,12 @@ export const AddCarDashboard = () => {
       } = await axiosAdmin.get("/car-region");
       setRegionArr(car_region);
       setModelArr(car_model);
+
+      if (!id) {
+        setRegion(car_region[0]?.id);
+        setModel(car_model[0]?.id);
+      }
+
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -78,7 +84,13 @@ export const AddCarDashboard = () => {
 
   const handleCreateCar = (e) => {
     e.preventDefault();
-    const new_car = { year, color, number, model_id: model, region_id: region };
+    const new_car = {
+      year,
+      color: color.toUpperCase(),
+      number: number.toUpperCase(),
+      model_id: model,
+      region_id: region,
+    };
     if (id) {
       editCar(new_car);
     } else {
