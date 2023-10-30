@@ -23,9 +23,16 @@ import {
   NotFound,
   DashboarOrder,
   AddOrderDashboard,
+  DashboardDriverOrders,
+  AddBalanse,
+  Others,
+  Payments,
+  Admins,
+  FormAdminDashboard,
 } from "../../pages";
 // import Cookies from "js-cookie";
 import { ProtectRouteAdmin, ProtectRouteDriver } from "../../auth";
+import { Info } from "../../private";
 export const Router = () => {
   return (
     <Fragment>
@@ -185,6 +192,15 @@ export const Router = () => {
         />
 
         <Route
+          path="/dashboard/driver/pay/:id"
+          element={
+            <ProtectRouteAdmin>
+              <AddBalanse />
+            </ProtectRouteAdmin>
+          }
+        />
+
+        <Route
           path="/dashboard/address/add"
           element={
             <ProtectRouteAdmin>
@@ -265,13 +281,70 @@ export const Router = () => {
         />
 
         <Route
-          path="*"
+          path="/dashboard/driver-orders"
           element={
-            <ProtectRouteDriver>
-              <NotFound />
-            </ProtectRouteDriver>
+            <ProtectRouteAdmin>
+              <DashboardDriverOrders />
+            </ProtectRouteAdmin>
           }
         />
+
+        <Route
+          path="/dashboard/others"
+          element={
+            <ProtectRouteAdmin>
+              <Others />
+            </ProtectRouteAdmin>
+          }
+        />
+
+        <Route
+          path="/dashboard/others/payments"
+          element={
+            <ProtectRouteAdmin>
+              <Payments />
+            </ProtectRouteAdmin>
+          }
+        />
+        <Route
+          path="/dashboard/others/admins"
+          element={
+            <ProtectRouteAdmin>
+              <Admins />
+            </ProtectRouteAdmin>
+          }
+        />
+
+        <Route
+          path="/dashboard/others/admins/add"
+          element={
+            <ProtectRouteAdmin>
+              <FormAdminDashboard />
+            </ProtectRouteAdmin>
+          }
+        />
+
+        <Route
+          path="/dashboard/others/admins/blocked"
+          element={
+            <ProtectRouteAdmin>
+              <Admins />
+            </ProtectRouteAdmin>
+          }
+        />
+
+        <Route
+          path="/dashboard/others/admins/edit/:id"
+          element={
+            <ProtectRouteAdmin>
+              <FormAdminDashboard />
+            </ProtectRouteAdmin>
+          }
+        />
+
+        <Route path="info" element={<Info />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routers>
     </Fragment>
   );
