@@ -1,0 +1,44 @@
+.DashboardConfig {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 300px;
+}
+.Dashboard {
+  width: calc(100%);
+  height: 100vh;
+}
+.Dashboard__list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+.Dashboard__boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 250px;
+  margin: 10px 20px;
+  background-color: #ffff0079;
+  height: 150px;
+  box-shadow: rgba(191, 255, 0, 0.864) 0px 1px 3px,
+    rgba(238, 238, 19, 0.24) 0px 1px 2px;
+  padding: 10px 25px;
+  border-radius: 12px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.Dashboard__boxes:hover {
+  background: #ffff00;
+}
+.Dashboard__boxes h1 {
+  font-size: 20px;
+}
+.Dashboard__boxes h3 {
+  font-size: 40px;
+}
