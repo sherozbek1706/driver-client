@@ -3,5 +3,28 @@ export * from "./home/home.jsx";
 export * from "./news/news.jsx";
 export * from "./profile/profile.jsx";
 export * from "./maps/maps.jsx";
+export * from "./orders/orders.jsx";
+export * from "./driver-order/driver-order.jsx";
+export * from "./notfound/notfound.jsx";
 
 export * from "./dashboard-login/dashboard-login.jsx";
+export * from "./dashboard/dashboard.jsx";
+export * from "./dashboard-model/dashboard-model.jsx";
+export * from "./dashboard-car/dashboard-car.jsx";
+export * from "./dashboard-region/dashboard-region.jsx";
+export * from "./dashboard-address/dashboard-address.jsx";
+export * from "./dashboard-driver/dashboard-driver.jsx";
+export * from "./dashboard-order/dashboard-order.jsx";
+export * from "./dashboard-driver-orders/dashboard-driver-orders.jsx";
+export * from "./others/others/others.jsx";
+export * from "./others/payments/payments.jsx";
+export * from "./others/admin/admin.jsx";
+
+export * from "./dashboard-model/d-model/add/add-model.jsx";
+export * from "./dashboard-region/d-region/add/add-region.jsx";
+export * from "./dashboard-address/d-address/add/add-address.jsx";
+export * from "./dashboard-car/d-car/add/add-car.jsx";
+export * from "./dashboard-driver/d-driver/add/add-driver.jsx";
+export * from "./dashboard-order/d-order/add/add-order.jsx";
+export * from "./dashboard-driver/d-driver/balanse/balanse.jsx";
+export * from "./others/add-admin/add-admin.jsx";

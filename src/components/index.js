@@ -6,3 +6,4 @@ export * from "./dashboard-header/dashboard-header.jsx";
 export * from "./have-order/have-order.jsx";
 export * from "./empty/empty.jsx";
 export * from "./build/build.jsx";
+export * from "./payment/payment.jsx";

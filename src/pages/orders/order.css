@@ -1,0 +1,68 @@
+.Order {
+  position: relative;
+  color: #fff;
+  width: 800px;
+  height: calc(100vh);
+  padding-bottom: 90px;
+  background-color: #000;
+  overflow-x: hidden;
+}
+.Orders__container {
+  width: 100%;
+  padding: 10px 15px;
+}
+.OrdersContainer__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.OrdersContainer__item {
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  margin: 8px 0;
+  border-radius: 4px;
+}
+.OrdersContainerItem__address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.OrdersContainerItem__address h1 {
+  font-size: 20px;
+  letter-spacing: -1.2px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.OrdersContainerItem__address h2 {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  text-transform: capitalize;
+}
+.OrdersContainerItem__get {
+  display: flex;
+  width: 80px;
+  text-align: center;
+  font-weight: 600;
+  color: #000;
+  line-height: 20px;
+  background-color: #ffcc5c;
+  border-radius: 4px;
+  border: none;
+  box-shadow: rgba(216, 231, 3, 0.418) 0px 2px 5px -1px,
+    rgba(216, 231, 5, 0.3) 0px 1px 3px -1px;
+}
+.Orders__count {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}

@@ -1,0 +1,133 @@
+.DriverOrder {
+  position: relative;
+  color: #fff;
+  width: 800px;
+  height: calc(100vh);
+  padding-bottom: 90px;
+  background-color: #000;
+  overflow-x: hidden;
+}
+.DriverOrder__container {
+  position: absolute;
+  width: 100%;
+  padding: 10px 15px;
+  height: calc(100% - 70px);
+}
+.DriverOrder__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin: 10px 0;
+  background-color: #3c2f2f;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.DriverOrder__card h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: -1px;
+  color: #e4e4e4;
+}
+.DriverOrder__card h3 span {
+  font-family: monospace;
+  font-size: 24px;
+}
+.DriverOrder__card h1 {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.DriverOrder__card h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+.DriverOrder__card h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+.DriverOrder__phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 4px;
+  background-color: rgb(123, 168, 33);
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.DriverOrder__phone .icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+.DriverOrder__finish {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  width: 94%;
+  height: 70px;
+  border: none;
+  bottom: 0;
+  margin: 10px 0;
+  border-radius: 4px;
+  background-color: #ffff00;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 100px;
+  box-shadow: rgba(218, 171, 2, 0.25) 0px 50px 100px -20px,
+    rgba(246, 230, 4, 0.3) 0px 30px 60px -30px,
+    rgba(208, 254, 0, 0.35) 0px -2px 6px 0px inset;
+}
+.DriverOrder__finish .icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+.DriverOrder__status {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.DriverOrder__status p {
+  padding: 5px 12px;
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  border-radius: 5px;
+  background-color: #ffff00;
+}
+.DriverOrderOperator {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DriverOrderOperator p {
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+}
+.DriverOrderOperator .icon {
+  font-size: 22px;
+  margin-right: 10px;
+}

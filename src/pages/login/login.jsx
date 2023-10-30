@@ -1,17 +1,27 @@
-import { useState } from "react";
-import "./login.css";
-import { axiosInstance, error_notify, success_notify } from "../../shared";
-import { useNavigate } from "react-router";
-import jwt_decode from "jwt-decode";
 import Cookies from "js-cookie";
+import jwt_decode from "jwt-decode";
+import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import {
+  axiosInstance,
+  errorHandler,
+  error_notify,
+  success_notify,
+  warning_notify,
+} from "../../shared";
+import "./login.css";
 export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  const navigate = useNavigate();
+  const [reacaptcha, setReacaptcha] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
+
+    if (!reacaptcha) {
+      warning_notify("Siz recaptchani to'ldirmagansiz!");
+      return;
+    }
 
     const driver = { username, password };
 
@@ -25,11 +35,15 @@ export const Login = () => {
         setTimeout(() => {
           window.location.assign("/");
         }, 500);
-        navigate("/");
       })
-      .catch(({ response: { data } }) => {
-        error_notify(data.error);
+      .catch((error) => {
+        error_notify(error?.response?.data?.error);
+        errorHandler(error);
       });
+  };
+
+  const recapcha = (e) => {
+    setReacaptcha(e);
   };
 
   return (
@@ -53,6 +67,10 @@ export const Login = () => {
             />
             <label>Password</label>
           </div>
+          <ReCAPTCHA
+            sitekey="6Le8W8woAAAAAFfM4WMufyJFujP5JpyXdgHOK3m6"
+            onChange={(e) => recapcha(e)}
+          />
           <button>Login</button>
         </form>
       </div>

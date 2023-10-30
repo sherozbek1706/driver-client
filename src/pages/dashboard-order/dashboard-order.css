@@ -1,0 +1,105 @@
+.DashboardOrder {
+  width: calc(100%);
+  height: 100%;
+}
+.DashboardOrder__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px 20px;
+}
+.DashboardOrder__row,
+.DashboardOrder__row_head {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  color: #fff;
+  height: 50px;
+  background-color: #222;
+}
+.DashboardOrder__row:nth-child(2n-1) {
+  background-color: #222222c3;
+}
+.DashboardOrder__row p,
+.DashboardOrder__row_head p {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.DashboardOrderRow__id {
+  width: 10%;
+}
+.DashboardOrderRow__address_id {
+  width: 15%;
+}
+
+.DashboardOrderRow__admin_name {
+  width: 25%;
+}
+
+.DashboardOrderRow__phone_number {
+  width: 20%;
+}
+.DashboardOrderRow__status {
+  width: 10%;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.DashboardOrderRow__status.progress {
+  color: #000;
+  padding: 5px 20px;
+  background-color: yellow;
+  border-radius: 8px;
+}
+.DashboardOrderRow__status.open {
+  padding: 5px 20px;
+  background-color: yellowgreen;
+  border-radius: 8px;
+  color: #fff;
+}
+.DashboardOrderRow__status.close {
+  padding: 5px 20px;
+  background-color: #fe4a49;
+  border-radius: 8px;
+  color: #000;
+}
+
+.DashboardOrderRow__option {
+  width: 20%;
+  height: 100%;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.DashboardOrderRow__option .icon {
+  color: #fff;
+  width: 30px;
+  border: none;
+  border-radius: 8px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #000;
+  margin: 0 5px;
+  opacity: 0.5;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition: 0.4s ease-in-out;
+}
+
+.DashboardOrderRow__option .icon:hover {
+  opacity: 1;
+}

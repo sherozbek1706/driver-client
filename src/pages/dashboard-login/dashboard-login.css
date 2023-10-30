@@ -1,12 +1,75 @@
 .DashboardLogin {
-  width: 100%;
+  width: 800px;
   height: 100vh;
-  color: #fff;
-}
-.DashboardLogin form {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #000; */
 }
-.DashboardLogin form * {
-  margin: 10px 0;
+.DashboardLogin .form-wrapper {
+  border-radius: 4px;
+  padding: 70px;
+  width: 450px;
+  background: #000000;
+}
+.DashboardLogin .form-wrapper h2 {
+  color: #fff;
+  font-size: 28px;
+}
+.DashboardLogin .form-wrapper form {
+  margin: 25px 0px;
+}
+.DashboardLogin form .form-control {
+  height: 50px;
+  position: relative;
+  margin-bottom: 16px;
+}
+.DashboardLogin .form-control input {
+  height: 100%;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  padding: 0 20px;
+}
+.DashboardLogin .form-control input:is(:focus, :valid) {
+  background: #444;
+  padding: 16px 20px 0;
+}
+.DashboardLogin .form-control label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  pointer-events: none;
+  color: #8c8c8c;
+  transition: all 0.1s ease;
+}
+.DashboardLogin .form-control input:is(:focus, :valid) ~ label {
+  font-size: 10px;
+  transform: translateY(-130%);
+}
+.DashboardLogin form button {
+  width: 100%;
+  padding: 16px 0;
+  font-size: 1rem;
+  background: #ffd500c2;
+  color: #000;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  margin: 25px 0 10px;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+.DashboardLogin form button:hover {
+  background: #ffd300;
+}
+.DashboardLogin .form-wrapper :where(label) {
+  color: #b3b3b3;
 }
