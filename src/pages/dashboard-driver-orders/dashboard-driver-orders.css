@@ -1,0 +1,99 @@
+.DashboardDriverOrders {
+  width: calc(100%);
+  height: 100%;
+}
+.DashboardDriverOrders__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px 20px;
+}
+.DashboardDriverOrders__row,
+.DashboardDriverOrders__row_head {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  color: #fff;
+  height: 50px;
+  background-color: #222;
+}
+.DashboardDriverOrders__row:nth-child(2n-1) {
+  background-color: #222222c3;
+}
+.DashboardDriverOrders__row p,
+.DashboardDriverOrders__row_head p {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DashboardDriverOrdersRow__id {
+  width: 10%;
+}
+.DashboardDriverOrdersRow__driver_id {
+  width: 13%;
+}
+.DashboardDriverOrdersRow__driver_username {
+  width: 20%;
+}
+.DashboardDriverOrdersRow__order_id {
+  width: 12%;
+}
+.DashboardDriverOrdersRow__order_address {
+  width: 20%;
+}
+.DashboardDriverOrdersRow__paid {
+  width: 15%;
+}
+.DashboardDriverOrdersRow__paid.active {
+  background-color: yellowgreen;
+  padding: 5px;
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  border-radius: 4px;
+}
+.DashboardDriverOrdersRow__paid.noactive {
+  background-color: #fe4a49;
+  padding: 5px;
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  border-radius: 4px;
+}
+.DashboardDriverOrdersRow__option {
+  width: 10%;
+  height: 100%;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DashboardDriverOrdersRow__option .icon {
+  color: #fff;
+  width: 30px;
+  border: none;
+  border-radius: 8px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #000;
+  margin: 0 5px;
+  opacity: 0.5;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition: 0.4s ease-in-out;
+}
+
+.DashboardDriverOrdersRow__option .icon:hover {
+  opacity: 1;
+}
