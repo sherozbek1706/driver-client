@@ -4,7 +4,7 @@ import { Sitebar } from "../../layouts";
 import { axiosInstance } from "../../shared/services";
 import "./profile.css";
 import { errorHandler } from "../../shared/handler/errors";
-import { api } from "../../utils";
+import { api, formatmoney } from "../../utils";
 import { lotinKirilOtkazish } from "../../utils/functions/lotin-kiril";
 export const Profile = () => {
   const [loading, setLoading] = useState(true);
@@ -49,7 +49,7 @@ export const Profile = () => {
             {lotinKirilOtkazish("Haydovchi")}
           </h2>
           <h2 className="ProfileContentMoney">
-            {lotinKirilOtkazish(`${data.balans}  SO'M`) ||
+            {lotinKirilOtkazish(`${formatmoney(data.balans)}  SO'M`) ||
               lotinKirilOtkazish("Nomalum")}
           </h2>
         </div>
