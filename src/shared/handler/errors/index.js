@@ -3,11 +3,11 @@ import { error_notify, info_notify, warning_notify } from "../../notify";
 export const errorHandler = (error, callFunction) => {
   let response = error?.response;
 
-  if (!error.response) {
+  if (!error?.response) {
     error_notify(error.message);
   }
 
-  if (error.response.data.error) {
+  if (error?.response?.data?.error) {
     error_notify(error.response.data.error);
   }
 
