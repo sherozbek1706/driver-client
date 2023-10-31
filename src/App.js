@@ -8,13 +8,10 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Bar } from "./layouts";
 
-export const socket = io.connect(api);
+export const socket = io.connect("https://api.sherozbek.uz/");
 
 export const Context = React.createContext();
 function App() {
-  // useEffect(() => {
-  //   Cookies.set("language", "kiril");
-  // }, []);
   const context_data = {
     lang: Cookies.get("language"),
   };
