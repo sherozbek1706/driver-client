@@ -40,7 +40,6 @@ export const DriverOrder = () => {
       setNotfound(true);
       setLoading(false);
     }
-    setLoading(false);
   };
 
   const fetchData = async () => {
@@ -86,50 +85,55 @@ export const DriverOrder = () => {
   return (
     <div className="DriverOrder">
       <Header title={"Buyurtma"} />
-      {loading || !data ? (
+      {loading ? (
         <Loader />
       ) : (
-        <div className="DriverOrder__container">
-          <div className="DriverOrder__status">
-            <p>{lotinKirilOtkazish("Bajarilmoqda")}</p>
-          </div>
-          <div className="DriverOrder__card">
-            <h4>{new Date(data.time).toLocaleString()}</h4>
-            <h3>
-              {lotinKirilOtkazish("Buyurtma Raqami")}:{" "}
-              <span>#{data.order_id}</span>
-            </h3>
-            <h1>
-              {lotinKirilOtkazish(data.order_address || "Noma'lum Hudud")}
-            </h1>
-            <h2>{lotinKirilOtkazish(data.order_district)}</h2>
-          </div>
-          <div className="DriverOrder__card">
-            <div className="DriverOrderOperator">
-              <i className="fa-solid fa-user-gear icon"></i>
-              <p>
-                {lotinKirilOtkazish(data.order_admin_first_name)}
-                {"  "}
-                {lotinKirilOtkazish(data.order_admin_last_name)}
-              </p>
+        (data.length = 0 ? (
+          <Loader />
+        ) : (
+          <div className="DriverOrder__container">
+            {console.log(data)}
+            <div className="DriverOrder__status">
+              <p>{lotinKirilOtkazish("Bajarilmoqda")}</p>
             </div>
-          </div>
-          <a
-            href={"tel:" + data.order_phone_number}
-            className="DriverOrder__phone"
-          >
-            <i className="fa-solid fa-phone-volume icon"></i>
-            {lotinKirilOtkazish("Telefon Qilish")}
-          </a>
-          <button
-            onClick={() => handleHandOver(data.id)}
-            className="DriverOrder__finish"
-          >
-            <i className="fa-solid fa-flag-checkered icon"></i>{" "}
-            {lotinKirilOtkazish(`Buyurtmani
+            <div className="DriverOrder__card">
+              <h4>{new Date(data.time).toLocaleString()}</h4>
+              <h3>
+                {lotinKirilOtkazish("Buyurtma Raqami")}:{" "}
+                <span>#{data.order_id}</span>
+              </h3>
+              <h1>
+                {lotinKirilOtkazish(data.order_address || "Noma'lum Hudud")}
+              </h1>
+              <h2>{lotinKirilOtkazish(data.order_district)}</h2>
+            </div>
+            <div className="DriverOrder__card">
+              <div className="DriverOrderOperator">
+                <i className="fa-solid fa-user-gear icon"></i>
+                <p>
+                  {lotinKirilOtkazish(data.order_admin_first_name)}
+                  {"  "}
+                  {lotinKirilOtkazish(data.order_admin_last_name)}
+                </p>
+              </div>
+            </div>
+            <a
+              href={"tel:" + data.order_phone_number}
+              className="DriverOrder__phone"
+            >
+              <i className="fa-solid fa-phone-volume icon"></i>
+              {lotinKirilOtkazish("Telefon Qilish")}
+            </a>
+            <button
+              onClick={() => handleHandOver(data.id)}
+              className="DriverOrder__finish"
+            >
+              <i className="fa-solid fa-flag-checkered icon"></i>{" "}
+              {lotinKirilOtkazish(`Buyurtmani
             tugatish`)}
-          </button>
-        </div>
+            </button>
+          </div>
+        ))
       )}
       {/* <Sitebar /> */}
     </div>
