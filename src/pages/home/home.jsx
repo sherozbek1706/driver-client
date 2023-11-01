@@ -66,15 +66,13 @@ export const Home = () => {
     }
   };
 
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
     <div className="Home">
       <Header title={"Bosh Sahifa"} />
       {!active ? (
         <NoActive />
+      ) : loading ? (
+        <Loader />
       ) : (
         <Fragment>
           <DailyWork base={dailyWork} />
