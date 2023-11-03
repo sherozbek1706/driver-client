@@ -55,7 +55,7 @@ export const Home = () => {
         response1.data.data.data.forEach((item) => {
           datas.push({
             time: item.time,
-            miqdor: item.length,
+            Miqdor: item.length,
           });
         });
         setDailyWork(datas);
