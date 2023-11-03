@@ -78,9 +78,22 @@ export const DriverOrder = () => {
   if (notfound) {
     return <NotFound />;
   }
-  // if (loading) {
-  //   return <Loader />;
-  // }
+
+  const formatDate = (time) => {
+    const date = new Date(time);
+    const year = date.getFullYear();
+    const month = addLeadingZero(date.getMonth() + 1);
+    const day = addLeadingZero(date.getDate());
+    const hours = addLeadingZero(date.getHours());
+    const minutes = addLeadingZero(date.getMinutes());
+    const seconds = addLeadingZero(date.getSeconds());
+
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  };
+
+  const addLeadingZero = (number) => {
+    return number < 10 ? "0" + number : number;
+  };
 
   return (
     <div className="DriverOrder">
@@ -92,12 +105,11 @@ export const DriverOrder = () => {
           <Loader />
         ) : (
           <div className="DriverOrder__container">
-            {console.log(data)}
             <div className="DriverOrder__status">
               <p>{lotinKirilOtkazish("Bajarilmoqda")}</p>
             </div>
             <div className="DriverOrder__card">
-              <h4>{new Date(data.time).toLocaleString()}</h4>
+              <h4>{formatDate(data.time)}</h4>
               <h3>
                 {lotinKirilOtkazish("Buyurtma Raqami")}:{" "}
                 <span>#{data.order_id}</span>

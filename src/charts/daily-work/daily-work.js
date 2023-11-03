@@ -36,8 +36,8 @@ export const DailyWork = ({ base }) => {
           <Legend />
           <Line
             type="monotone"
-            dataKey="miqdor"
-            stroke="#ffff00"
+            dataKey="Miqdor"
+            stroke="#ff0000"
             strokeWidth={4}
             activeDot={{ r: 4, fill: "red" }}
           />

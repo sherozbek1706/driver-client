@@ -55,7 +55,7 @@ export const Home = () => {
         response1.data.data.data.forEach((item) => {
           datas.push({
             time: item.time,
-            miqdor: item.length,
+            Miqdor: item.length,
           });
         });
         setDailyWork(datas);
@@ -66,15 +66,13 @@ export const Home = () => {
     }
   };
 
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
     <div className="Home">
       <Header title={"Bosh Sahifa"} />
       {!active ? (
         <NoActive />
+      ) : loading ? (
+        <Loader />
       ) : (
         <Fragment>
           <DailyWork base={dailyWork} />

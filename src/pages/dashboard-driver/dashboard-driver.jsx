@@ -11,6 +11,7 @@ import {
   success_notify,
 } from "../../shared";
 import "./dashboard-driver.css";
+import { formatmoney } from "../../utils";
 export const DashboardDriver = () => {
   const [loading, setLoading] = useState(true);
   const [option, setOption] = useState("active");
@@ -205,7 +206,9 @@ export const DashboardDriver = () => {
                     <p className="DashboardDriverRow__car_id">
                       {item.car_id || "UNKW"}
                     </p>
-                    <p className="DashboardDriverRow__balans">{item.balans}</p>
+                    <p className="DashboardDriverRow__balans">
+                      {formatmoney(item.balans)}
+                    </p>
                     <p className="DashboardDriverRow__active">
                       {item.active ? "Ishda" : "Ishda emas!"}
                     </p>

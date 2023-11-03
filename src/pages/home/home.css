@@ -1,19 +1,18 @@
 .Home {
   position: relative;
   color: #fff;
-  max-width: 800px;
+  width: 100%;
   height: calc(100vh);
   padding-bottom: 90px;
   background-color: #000;
   overflow-x: hidden;
 }
-.Home::-webkit-scrollbar {
-  display: none;
-}
+
 .Home__container {
   max-width: 100%;
   padding: 20px 15px;
 }
+
 .Home__header {
   width: 100%;
   padding: 0;
