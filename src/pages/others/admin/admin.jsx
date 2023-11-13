@@ -118,14 +118,14 @@ export const Admins = () => {
                 to="/dashboard/others/admins/blocked"
                 className="DashboardHeadOption__button"
               >
-                <i class="fa-solid fa-ban icon"></i>
+                <i className="fa-solid fa-ban icon"></i>
                 Blocked
               </Link>
               <Link
                 to="/dashboard/others/admins/add"
                 className="DashboardHeadOption__button"
               >
-                <i class="fa-solid fa-user-plus icon"></i>
+                <i className="fa-solid fa-user-plus icon"></i>
                 Add Admin
               </Link>
               <Link

@@ -51,7 +51,6 @@ export const Dashboard = () => {
       }
       if (response2.status == 200) {
         let datas = [];
-        console.log(response2);
         response2.data.data.data.forEach((item) => {
           datas.push({
             time: item.time,
@@ -62,7 +61,6 @@ export const Dashboard = () => {
       }
       if (response3.status == 200) {
         let datas = [];
-        console.log(response3);
         response3.data.data.forEach((item) => {
           datas.push({
             day: item.day,
@@ -73,7 +71,6 @@ export const Dashboard = () => {
       }
       if (response4.status == 200) {
         let datas = [];
-        console.log(response4);
         response4.data.data.info.forEach((item) => {
           datas.push({
             day: item.day,
@@ -131,7 +128,6 @@ export const Dashboard = () => {
   //         saveAs(pdfBlob, "newPdf.pdf");
   //       });
   //   } catch (error) {
-  //     console.log(error);
   //   }
   // };
 

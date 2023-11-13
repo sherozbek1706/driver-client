@@ -24,7 +24,6 @@ export const DashboardDriverOrders = () => {
       const response = await axiosAdmin.get("/driver-order/all");
       if (response.status == 200) {
         setData(response.data.data);
-        console.log(response.data.data);
       }
       setLoading(false);
     } catch (error) {

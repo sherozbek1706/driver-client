@@ -22,7 +22,6 @@ export const Profile = () => {
       setData(driver);
       setLoading(false);
     } catch (error) {
-      console.log(error);
       errorHandler(error);
     }
   };
@@ -37,7 +36,7 @@ export const Profile = () => {
           <div className="Profile__content">
             <div className="Profile__image">
               <div className="Profile__field">
-                <img src={"https://api.sherozbek.uz" + data.image} alt="" />
+                <img src={api + data.image} alt="" />
               </div>
             </div>
             <div className="ProfileContent__option">

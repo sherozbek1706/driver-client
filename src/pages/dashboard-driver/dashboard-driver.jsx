@@ -22,7 +22,7 @@ export const DashboardDriver = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    socket.on("get_action_driver", (data) => {
+    socket.on("haydovchini_aktivligi_almashtirilsin", (data) => {
       fetchData();
       setLoading(true);
     });

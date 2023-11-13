@@ -79,7 +79,7 @@ export const AddOrderDashboard = () => {
       const response = await axiosAdmin.post("/order", data);
       if (response.status === 201) {
         success_notify("Buyutma yaratildi!");
-        socket.emit("add_order", { msg: "go" });
+        socket.emit("buyurtma_qushish", { msg: "go" });
         navigate("/dashboard/order");
       }
     } catch (error) {

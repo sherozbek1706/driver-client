@@ -18,10 +18,10 @@ export const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (!reacaptcha) {
-      warning_notify("Siz recaptchani to'ldirmagansiz!");
-      return;
-    }
+    // if (!reacaptcha) {
+    //   warning_notify("Siz recaptchani to'ldirmagansiz!");
+    //   return;
+    // }
 
     const driver = { username, password };
 

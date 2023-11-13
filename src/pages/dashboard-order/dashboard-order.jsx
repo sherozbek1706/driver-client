@@ -18,16 +18,15 @@ export const DashboarOrder = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    socket.on("get_action_order", (data) => {
-      setLoading(true);
-      handleRenderData(url);
-    });
+    // socket.on("get_action_order", (data) => {
+    //   setLoading(true);
+    //   handleRenderData(url);
+    // });
     setLoading(true);
     handleRenderData("/order");
   }, [url, socket]);
 
   const handleRenderData = async () => {
-    console.log(url);
     try {
       const response = await axiosAdmin.get(url);
       if (response.status == 200) {
