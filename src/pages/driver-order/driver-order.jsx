@@ -64,8 +64,9 @@ export const DriverOrder = () => {
       const audio = new Audio(done_ringtong);
       const response = await axiosInstance.post("/driver-order/handover/" + id);
       if (response.status == 201) {
+        let data = response.data.data;
         success_notify("Buyurtma bajarildi!");
-        socket.emit("handover_order_driver", { msg: "go" });
+        socket.emit("buyurtma_bajarildi", response.data.data[0] );
         navigate("/orders");
         audio.play();
       }
@@ -74,6 +75,41 @@ export const DriverOrder = () => {
       errorHandler(error, changeNotFound);
     }
   };
+
+  const handleHandWait = async (id) => {
+    try {
+      setLoading(true);
+      const response = await axiosInstance.post("/driver-order/handwait/" + id);
+      if (response.status == 201) {
+        success_notify("Manzilga yetib keldingiz!");
+        socket.emit("manzilga_yetib_keldim", {msg: "go"})
+        setLoading(false);
+        fetchData()
+      }
+    } catch (error) {
+      error_notify(error.response.data.error);
+      setLoading(false);
+      errorHandler(error, changeNotFound);
+    }
+  };
+
+  const handleHandRestart = async (id) => {
+    try {
+      setLoading(true);
+      const response = await axiosInstance.post("/driver-order/handrestart/" + id);
+      if (response.status == 201) {
+        success_notify("Oq Yo'l. Yo'lingiz ochiq bo'lsin. ");
+        socket.emit("yulovchi_bilan_yulga_chiqdik", {msg: "go"})
+        setLoading(false);
+        fetchData()
+      }
+    } catch (error) {
+      error_notify(error.response.data.error);
+      setLoading(false);
+      errorHandler(error, changeNotFound);
+    }
+  };
+
 
   if (notfound) {
     return <NotFound />;
@@ -136,14 +172,35 @@ export const DriverOrder = () => {
               <i className="fa-solid fa-phone-volume icon"></i>
               {lotinKirilOtkazish("Telefon Qilish")}
             </a>
+
+            <button
+              onClick={() => handleHandWait(data.id)}
+              className={`DriverOrder__finish ${data.order_status == "progress" ? "finishedActive": null }`}
+              disabled={data.order_status == "progress" ? false : true}
+            >
+              <i className="fa-solid fa-location-dot icon"></i>{" "}
+              {lotinKirilOtkazish(`Manzilga Yetib Keldim`)}
+            </button>
+
+            <button
+              onClick={() => handleHandRestart(data.id)}
+              className={`DriverOrder__finish ${data.order_status == "wait" ? "finishedActive": null }`}
+              disabled={data.order_status == "wait" ? false : true}
+            >
+              <i className="fa-solid fa-route icon"></i>{" "}
+              {lotinKirilOtkazish(`Yo'lga Chiqish`)}
+            </button>
+
             <button
               onClick={() => handleHandOver(data.id)}
-              className="DriverOrder__finish"
+              className={`DriverOrder__finish ${data.order_status == "restart" ? "finishedActive": null }`}
+              disabled={data.order_status == "restart" ? false : true}
             >
               <i className="fa-solid fa-flag-checkered icon"></i>{" "}
               {lotinKirilOtkazish(`Buyurtmani
             tugatish`)}
             </button>
+
           </div>
         ))
       )}
