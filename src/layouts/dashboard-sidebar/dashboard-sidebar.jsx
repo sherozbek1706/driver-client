@@ -122,7 +122,7 @@ export const DashboardSidebar = () => {
             pathname == "/dashboard/others" ? "active" : ""
           }`}
         >
-          <i class="fa-solid fa-ellipsis icon"></i>
+          <i className="fa-solid fa-ellipsis icon"></i>
           Others Panel
         </Link>
       </div>

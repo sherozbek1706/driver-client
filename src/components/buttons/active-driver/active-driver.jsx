@@ -10,7 +10,7 @@ export const ActiveDriver = ({ active, fetchData }) => {
       const response = await axiosInstance.patch("/driver/active/off");
       if (response.status == 200) {
         success_notify("Siz ishni to'xtatdingiz.");
-        socket.emit("change_activity_driver", { msg: "go" });
+        socket.emit("hayvochini_activligini_almashtirish", { msg: "go" });
         fetchData();
       }
     } catch (error) {
@@ -23,7 +23,7 @@ export const ActiveDriver = ({ active, fetchData }) => {
       const response = await axiosInstance.patch("/driver/active/on");
       if (response.status == 200) {
         success_notify("Siz ishni boshladingiz");
-        socket.emit("change_activity_driver", { msg: "go" });
+        socket.emit("hayvochini_activligini_almashtirish", { msg: "go" });
         fetchData();
       }
     } catch (error) {

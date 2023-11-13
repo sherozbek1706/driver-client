@@ -12,7 +12,6 @@ import {
 import "./drivers-chart.css";
 
 export const Drivers_chart = ({ base }) => {
-  console.log(base);
   return (
     <div className="DriverCharts">
       <h1 className="Charts__title">

@@ -20,7 +20,6 @@ export const DriverModal = ({ user: driverId, changeOpen }) => {
       const response = await axiosAdmin("/driver/" + driverId);
       if (response.status == 200) {
         setData(response.data.data);
-        console.log(response.data.data);
         setLoading(false);
       }
     } catch (error) {
@@ -34,7 +33,6 @@ export const DriverModal = ({ user: driverId, changeOpen }) => {
       const response = await axiosAdmin("/driver-order/driver/" + driverId);
       if (response.status == 200) {
         setOrder(response.data.data);
-        console.log(response.data.data);
         setLoading(false);
       }
     } catch (error) {

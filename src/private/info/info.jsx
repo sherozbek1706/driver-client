@@ -14,13 +14,11 @@ export const Info = () => {
 
       if (response.status == 200) {
         let data = response.data.data;
-        console.log(data);
         setData(data);
         setLoading(false);
       }
     } catch (error) {
       setLoading(false);
-      console.log(error);
     }
   };
 
