@@ -7,15 +7,18 @@
   background-color: #000;
   overflow-x: hidden;
 }
+
 .Orders__container {
   width: 100%;
   padding: 10px 15px;
 }
+
 .OrdersContainer__list {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .OrdersContainer__item {
   width: 100%;
   background-color: #333;
@@ -26,24 +29,28 @@
   margin: 8px 0;
   border-radius: 4px;
 }
+
 .OrdersContainerItem__address {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
+
 .OrdersContainerItem__address h1 {
   font-size: 20px;
   letter-spacing: -1.2px;
   font-weight: 600;
   text-transform: capitalize;
 }
+
 .OrdersContainerItem__address h2 {
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.5px;
   text-transform: capitalize;
 }
+
 .OrdersContainerItem__get {
   display: flex;
   width: 80px;
@@ -57,6 +64,7 @@
   box-shadow: rgba(216, 231, 3, 0.418) 0px 2px 5px -1px,
     rgba(216, 231, 5, 0.3) 0px 1px 3px -1px;
 }
+
 .Orders__count {
   width: 100%;
   display: flex;
@@ -65,4 +73,100 @@
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -1px;
+}
+
+.OrderTimerModal {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.887);
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.show_modal {
+  display: flex;
+}
+
+.OrderTimerModal__cloud {
+  width: 500px;
+  padding: 60px 80px;
+  background-color: #000;
+  border-radius: 8px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.OrderTimerModalCloud__title {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: -1px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.OrderTimerModalTime {
+  width: 100%;
+  font-weight: 500;
+  padding: 10px 0px;
+  background-color: #262626;
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  margin: 5px 0;
+  border-radius: 8px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  transition: .3s ease-in-out;
+}
+
+.OrderTimerModalTime:hover {
+  background-color: #222;
+  cursor: pointer;
+}
+
+.OrderTimerModalTime span {
+  font-weight: 700;
+  font-size: 18px;
+  padding-right: 10px;
+  color: #ffff00;
+}
+
+.OrderTimerModal__cancel {
+  min-width: 300px;
+  border-radius: 8px;
+  border: none;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 20px 0;
+  background-color: #222;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.OrderTimerModal__cancel:hover {
+  background-color: #111;
+}
+
+.OrderTimerModal__cancel .icon {
+  font-size: 24px;
+  color: red;
+  padding-right: 10px;
 }

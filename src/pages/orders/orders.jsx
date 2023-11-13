@@ -1,5 +1,5 @@
 import bcryptjs from "bcryptjs";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { socket } from "../../App";
 import ringtong_new_order from "../../assets/music/ringtong_order.wav";
 import {
@@ -14,8 +14,8 @@ import { Sitebar } from "../../layouts";
 import { axiosInstance } from "../../shared";
 import { errorHandler } from "../../shared/handler/errors";
 import { error_notify, success_notify } from "../../shared/notify";
-import "./order.css";
 import { lotinKirilOtkazish } from "../../utils/functions/lotin-kiril";
+import "./order.css";
 
 export const Order = () => {
   const [loading, setLoading] = useState(true);
@@ -24,6 +24,9 @@ export const Order = () => {
   const [haveOrder, setHaveOrder] = useState(false);
   const [data, setData] = useState([]);
   const [params, setParams] = useState("");
+  const [orderId, setOrderId] = useState("");
+
+  const timeModal = useRef(null)
 
   useEffect(() => {
     const audio = new Audio(ringtong_new_order);
@@ -37,7 +40,7 @@ export const Order = () => {
 
     if (active) {
       if (!haveOrder) {
-        socket.on("get_new_orders", (data) => {
+        socket.on("yangi_buyurtmani_olish", (data) => {
           audio.play();
           setLoading(true);
           fetchData();
@@ -45,8 +48,11 @@ export const Order = () => {
       }
     }
 
-    socket.on("get_action_order_driver", (data) => {
-      // setLoading(true);
+    socket.on("buyurtma_qabul_qilindi", (data) => {
+      fetchData();
+    });
+
+    socket.on("buyurtma_tuliq_bajarildi", (data) => {
       fetchData();
     });
   }, [socket, haveOrder]);
@@ -106,59 +112,94 @@ export const Order = () => {
     }
   };
 
-  const handleGetOrder = async (id) => {
+  const handleSelectOrder = (id = 0) => {
+    setOrderId(id);
+    timeModal.current.classList.toggle("show_modal")
+  }
+
+  const handleGetOrder = async (id, time) => {
     try {
-      const response = await axiosInstance.get("/driver-order/" + id);
+      const response = await axiosInstance.post("/driver-order/" + id, { time });
       if (response.status == 201) {
         success_notify("Siz buyurtmani qabul qildingiz");
-        socket.emit("accept_order", { msg: "go" });
+        socket.emit("buyurtmani_qabul_qilish", { msg: "go" });
         fetchData();
       }
     } catch (error) {
       error_notify(error.response.data.error);
       errorHandler(error);
+    } finally {
+      timeModal.current.classList.toggle("show_modal")
     }
   };
 
   return (
-    <div className="Order">
-      <Header title={"Buyurtmalar"} />
-      <div className="Orders__container">
-        {loading ? (
-          <Loader />
-        ) : haveOrder ? (
-          <HaveOrder id={params} />
-        ) : !active ? (
-          <NoActive />
-        ) : payment ? (
-          <Payment />
-        ) : data.length == 0 ? (
-          <Empty />
-        ) : (
-          <div className="OrdersContainer__list">
-            {data.map((item) => (
-              <Fragment key={item.id}>
-                <div className="OrdersContainer__item">
-                  <div className="OrdersContainerItem__address">
-                    <h1>{lotinKirilOtkazish(item.address || "Nomalum")}</h1>
-                    <h2>{lotinKirilOtkazish(item.district)}</h2>
-                  </div>
-                  <button
-                    className="OrdersContainerItem__get"
-                    onClick={() => handleGetOrder(item.id)}
-                  >
-                    {lotinKirilOtkazish("QABUL QILISH")}
-                  </button>
-                </div>
-              </Fragment>
-            ))}
-            <h1 className="Orders__count">
-              - {data.length} {lotinKirilOtkazish("ta buyutma topildi")} -
-            </h1>
-          </div>
-        )}
+    <Fragment>
+      <div className="OrderTimerModal" ref={timeModal}>
+        <div className="OrderTimerModal__cloud">
+          <h1 className="OrderTimerModalCloud__title">
+            Buyurtmaga Necha Daqiqada yetib borishingizni tanlang!
+          </h1>
+          <button className="OrderTimerModalTime" onClick={() => handleGetOrder(orderId, 5)} >
+            <span>5</span> daqiqada yetib boraman!
+          </button>
+          <button className="OrderTimerModalTime" onClick={() => handleGetOrder(orderId, 8)} >
+            <span>8</span> daqiqada yetib boraman!
+          </button>
+          <button className="OrderTimerModalTime" onClick={() => handleGetOrder(orderId, 10)} >
+            <span>10</span> daqiqada yetib boraman!
+          </button>
+          <button className="OrderTimerModalTime" onClick={() => handleGetOrder(orderId, 15)} >
+            <span>15</span> daqiqada yetib boraman!
+          </button>
+          <button className="OrderTimerModalTime" onClick={() => handleGetOrder(orderId, 30)} >
+            <span>30</span> daqiqada yetib boraman!
+          </button>
+        </div>
+        <button className="OrderTimerModal__cancel" onClick={handleSelectOrder}>
+          <i className="fa-solid fa-circle-xmark icon"></i>
+          Buyurtmani Ortga qaytarish
+        </button>
       </div>
-      <Sitebar />
-    </div>
+      <div className="Order">
+        <Header title={"Buyurtmalar"} />
+        <div className="Orders__container">
+          {loading ? (
+            <Loader />
+          ) : haveOrder ? (
+            <HaveOrder id={params} />
+          ) : !active ? (
+            <NoActive />
+          ) : payment ? (
+            <Payment />
+          ) : data.length == 0 ? (
+            <Empty />
+          ) : (
+            <div className="OrdersContainer__list">
+              {data.map((item) => (
+                <Fragment key={item.id}>
+                  <div className="OrdersContainer__item">
+                    <div className="OrdersContainerItem__address">
+                      <h1>{lotinKirilOtkazish(item.address || "Nomalum")}</h1>
+                      <h2>{lotinKirilOtkazish(item.district)}</h2>
+                    </div>
+                    <button
+                      className="OrdersContainerItem__get"
+                      onClick={() => handleSelectOrder(item.id)}
+                    >
+                      {lotinKirilOtkazish("QABUL QILISH")}
+                    </button>
+                  </div>
+                </Fragment>
+              ))}
+              <h1 className="Orders__count">
+                - {data.length} {lotinKirilOtkazish("ta buyutma topildi")} -
+              </h1>
+            </div>
+          )}
+        </div>
+        <Sitebar />
+      </div>
+    </Fragment>
   );
 };
