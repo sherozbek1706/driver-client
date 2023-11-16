@@ -6,6 +6,14 @@
   justify-content: flex-start;
   padding-left: 300px;
 }
+@media only screen and (max-width: 1300px) {
+  /* .DashboardConfig{
+    min-width: 1300px;
+  }
+  .Dashboard{
+    min-width: 1300px;
+  } */
+}
 .Dashboard {
   width: calc(100%);
   height: 100vh;
