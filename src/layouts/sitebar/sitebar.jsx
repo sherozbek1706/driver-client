@@ -34,13 +34,22 @@ export const Sitebar = () => {
               <span className="link-text">Buyurtmalar</span>
             </Link>
           </li>
-          <li className="nav-list">
+          {/* <li className="nav-list">
             <Link
               to={"/news"}
               className={`link-item ${pathname == "/news" ? "active" : ""}`}
             >
               <i className="fa-solid fa-newspaper icon"></i>
               <span className="link-text">Yangiliklar</span>
+            </Link>
+          </li> */}
+          <li className="nav-list">
+            <Link
+              to={"/chats"}
+              className={`link-item ${pathname == "/chats" ? "active" : ""}`}
+            >
+              <i className="fa-solid fa-message icon"></i>
+              <span className="link-text">Chat</span>
             </Link>
           </li>
           <li className="nav-list">
