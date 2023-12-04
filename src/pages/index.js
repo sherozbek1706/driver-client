@@ -3,6 +3,7 @@ export * from "./home/home.jsx";
 export * from "./news/news.jsx";
 export * from "./profile/profile.jsx";
 export * from "./maps/maps.jsx";
+export * from "./chats/chats.jsx";
 export * from "./orders/orders.jsx";
 export * from "./driver-order/driver-order.jsx";
 export * from "./notfound/notfound.jsx";

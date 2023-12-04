@@ -1,0 +1,223 @@
+.Chats {
+  position: relative;
+  color: #fff;
+  width: 100%;
+  height: calc(100vh);
+  padding-bottom: 90px;
+  background-color: #000;
+  overflow-x: hidden;
+}
+#data {
+  scroll-behavior: smooth;
+}
+.Chats__container {
+  width: 100%;
+  height: calc(100% - 60px);
+}
+.Chats__messages {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow: auto;
+
+  padding: 20px 10px;
+}
+
+.ChatMessage {
+  width: 100%;
+  height: auto;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.ChatMessage__right {
+  justify-content: flex-end;
+}
+
+.ChatMessage__left {
+  justify-content: flex-start;
+}
+
+.ChatMessage__right .ChatMessage__text {
+  border-radius: 18px 12px 0 8px;
+  min-height: 50px;
+  position: relative;
+  background: linear-gradient(to right, #ffff0016, #131111);
+}
+/* .ChatMessage__right .ChatMessage__text::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: -12px;
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  border-radius: 0 50px 0 0;
+} */
+.ChatMessage__left .ChatMessage__text {
+  border-radius: 18px 12px 8px 0;
+  min-height: 50px;
+  background: linear-gradient(to left, rgba(24, 41, 77, 0.231), #1d1d1d);
+}
+
+.ChatMessage__text {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+
+  padding: 10px 20px;
+}
+.ChatMessage__text h2 {
+  font-size: 18px;
+  width: 100%;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.ChatMessage__text p {
+  font-size: 17px;
+  text-align: start;
+}
+.ChatMessage__right .ChatMessagePhoto {
+  top: -4px;
+  left: -22px;
+}
+.ChatMessage__left .ChatMessagePhoto {
+  top: -2px;
+  right: -5px;
+}
+.ChatMessagePhoto {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+.ChatMessagePhoto img {
+  width: 100%;
+  border-radius: 50%;
+  padding: 4px;
+  border: 2px solid #fff;
+}
+.Chats__inputs {
+  width: 100%;
+  height: 60px;
+  background-color: #241215;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+}
+.ChatsInputs__input {
+  border: none;
+  background-color: #232323;
+  border-radius: 4px;
+  color: #ffff00;
+  padding: 5px 12px;
+  font-weight: 500;
+  font-size: 16px;
+  width: calc(100% - 80px);
+  height: 40px;
+}
+.ChatsInputs__button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: #232323;
+  border-radius: 4px;
+  color: #ffff00;
+  margin: 5px 12px;
+  margin-right: 0;
+  opacity: 0.4;
+}
+.btn__active {
+  opacity: 1;
+}
+.ChatsInputs__button .icon {
+  font-size: 18px;
+}
+.ChatsInputs__button:hover {
+  cursor: not-allowed;
+}
+.ChatsInputs__button.btn__active:hover {
+  cursor: pointer;
+}
+
+.ChatNotification {
+  position: static;
+  width: 100%;
+  height: auto;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ChatNotification__message {
+  width: 90%;
+  /* height: 40px; */
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 2px 14px 8px 10px;
+  background: linear-gradient(-270deg, #ffffffd7, #ffff0062);
+}
+.ChatNotification__message p {
+  font-size: 16px;
+  text-align: center;
+  color: #000;
+  font-weight: 500;
+}
+.ChatMessage__text h6 {
+  font-weight: 300;
+  width: 100%;
+  text-align: right;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+  font-size: 8px;
+}
+@media (max-width: 450px) {
+  .Chats__messages {
+    height: calc(100% - 80px);
+  }
+  .Chats__inputs {
+    height: 80px;
+    padding: 0 5px;
+  }
+  .ChatsInputs__input {
+    height: 60px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .ChatsInputs__button {
+    width: 60px;
+    height: 60px;
+  }
+  .ChatsInputs__button .icon {
+    font-size: 22px;
+  }
+  .ChatMessage__text p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .ChatMessage__text h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  .ChatNotification__message p {
+    font-size: 14px;
+  }
+  .ChatMessagePhoto {
+    transform: scale(0.9);
+  }
+  .ChatsInputs__input {
+    font-size: 16px;
+  }
+}
