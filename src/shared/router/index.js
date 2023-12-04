@@ -29,6 +29,7 @@ import {
   Payments,
   Admins,
   FormAdminDashboard,
+  Chats,
 } from "../../pages";
 // import Cookies from "js-cookie";
 import { ProtectRouteAdmin, ProtectRouteDriver } from "../../auth";
@@ -54,6 +55,15 @@ export const Router = () => {
           element={
             <ProtectRouteDriver>
               <News />
+            </ProtectRouteDriver>
+          }
+        />
+        <Route
+          exact
+          path="/chats"
+          element={
+            <ProtectRouteDriver>
+              <Chats />
             </ProtectRouteDriver>
           }
         />
