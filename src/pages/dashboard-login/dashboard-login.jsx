@@ -1,9 +1,8 @@
-import { useNavigate } from "react-router-dom";
-import "./dashboard-login.css";
-import { useState } from "react";
 import jwt_decode from "jwt-decode";
-import Cookies from "js-cookie";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { axiosAdmin, error_notify, success_notify } from "../../shared";
+import "./dashboard-login.css";
 export const DashboardLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -18,9 +17,9 @@ export const DashboardLogin = () => {
     axiosAdmin
       .post("/admin/login", driver)
       .then(({ data: { data } }) => {
-        Cookies.set("admin_token", data);
+        localStorage.setItem("admin_token", data);
         const decode = jwt_decode(data);
-        Cookies.set("role", decode.user.role);
+        localStorage.setItem("role", decode.user.role);
         success_notify("Login qildingiz!");
         window.location.assign("/dashboard");
       })

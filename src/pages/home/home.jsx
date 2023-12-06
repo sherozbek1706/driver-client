@@ -1,12 +1,11 @@
 import { Fragment, useEffect, useState } from "react";
+import CountUp from "react-countup";
+import { DailyWork } from "../../charts";
 import { Header, Loader, NoActive } from "../../components";
 import { Sitebar } from "../../layouts";
-import CountUp from "react-countup";
-import "./home.css";
-import Cookies from "js-cookie";
 import { axiosInstance, errorHandler } from "../../shared";
-import { DailyWork, Daily_order_charts } from "../../charts";
 import { lotinKirilOtkazish } from "../../utils/functions/lotin-kiril";
+import "./home.css";
 
 export const Home = () => {
   const [loading, setLoading] = useState(true);

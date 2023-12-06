@@ -31,7 +31,6 @@ import {
   FormAdminDashboard,
   Chats,
 } from "../../pages";
-// import Cookies from "js-cookie";
 import { ProtectRouteAdmin, ProtectRouteDriver } from "../../auth";
 import { Info } from "../../private";
 export const Router = () => {

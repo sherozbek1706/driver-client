@@ -1,4 +1,3 @@
-import Cookies from "js-cookie";
 import { info_notify } from "../../shared";
 import "./dashboard-sidebar.css";
 import { Link, useLocation } from "react-router-dom";
@@ -7,9 +6,7 @@ export const DashboardSidebar = () => {
 
   const handleLogout = () => {
     info_notify("Tizimdan chiqdingiz!");
-    Object.keys(Cookies.get()).forEach((cookieName) => {
-      Cookies.remove(cookieName);
-    });
+    localStorage.clear();
     setTimeout(() => {
       window.location.assign("/");
     }, 1000);

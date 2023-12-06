@@ -1,4 +1,3 @@
-import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import { info_notify, success_notify } from "../../shared";
 import "./bar.css";
@@ -12,9 +11,9 @@ export const Bar = () => {
   const [lang, setLang] = useState("lotin");
 
   useEffect(() => {
-    let elLang = Cookies.get("language");
+    let elLang = localStorage.getItem("language");
     if (!elLang) {
-      Cookies.set("language", "lotin");
+      localStorage.setItem("language", "lotin");
     } else {
       setLang(elLang);
     }
@@ -22,7 +21,7 @@ export const Bar = () => {
 
   const handleChangeLang = (e) => {
     setLang(e.target.value);
-    Cookies.set("language", e.target.value);
+    localStorage.setItem("language", e.target.value);
     success_notify("Alifbo o'zgartirildi!");
     setTimeout(() => {
       window.location.assign("/");
@@ -31,8 +30,8 @@ export const Bar = () => {
 
   const onClickLogOutBtn = () => {
     info_notify("Tizimdan chiqdingiz!");
-    Object.keys(Cookies.get()).forEach((cookieName) => {
-      Cookies.remove(cookieName);
+    Object.keys(localStorage.getItem()).forEach((cookieName) => {
+      localStorage.removeItem(cookieName);
     });
     setTimeout(() => {
       window.location.assign("/");

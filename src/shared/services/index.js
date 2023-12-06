@@ -1,7 +1,6 @@
 import axios from "axios";
 import { api } from "../../utils";
-import Cookies from "js-cookie";
-const ACCESS_TOKEN = Cookies.get("token") || "";
+const ACCESS_TOKEN = localStorage.getItem("token") || "";
 export const axiosInstance = axios.create({
   baseURL: api,
   headers: {

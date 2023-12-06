@@ -1,16 +1,11 @@
-import Cookies from "js-cookie";
 import { error_notify, info_notify, warning_notify } from "../../notify";
 export const errorHandler = (error, callFunction) => {
   let response = error?.response;
 
   if (response?.status === 401) {
     error_notify("Qaytadan tizimga kiring!");
-    Object.keys(Cookies.get()).forEach((cookieName) => {
-      Cookies.remove(cookieName);
-    });
-    // setTimeout(() => {
+    localStorage.clear();
     window.location.assign("/login");
-    // }, 1000);
   }
 
   if (error.message === "Network Error") {
@@ -38,9 +33,7 @@ export const errorHandler = (error, callFunction) => {
     if (response?.data.error === "Ushbu haydovchi hozirda blok holatida!") {
       warning_notify("Admin sizni bloklagan!");
       window.location.assign("/");
-      Object.keys(Cookies.get()).forEach(function (cookieName) {
-        Cookies.remove(cookieName);
-      });
+      localStorage.clear();
     }
   }
 

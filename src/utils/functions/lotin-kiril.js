@@ -1,7 +1,5 @@
-import Cookies from "js-cookie";
-
 export const lotinKirilOtkazish = (matn) => {
-  let loc = Cookies.get("language");
+  let loc = localStorage.getItem("language");
   if (loc != "kiril") {
     return matn;
   }

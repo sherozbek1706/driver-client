@@ -1,12 +1,11 @@
-import { Fragment, useEffect, useState } from "react";
-import { Build, Header, Loader } from "../../components";
-import { Sitebar } from "../../layouts";
-import "./chats.css";
-import { axiosInstance, errorHandler } from "../../shared";
-import Cookies from "js-cookie";
 import jwtDecode from "jwt-decode";
-import { api } from "../../utils";
+import { Fragment, useEffect, useState } from "react";
 import { socket } from "../../App";
+import { Header, Loader } from "../../components";
+import { Sitebar } from "../../layouts";
+import { axiosInstance, errorHandler } from "../../shared";
+import { api } from "../../utils";
+import "./chats.css";
 export const Chats = () => {
   const [isBuild, setBuild] = useState(true);
   const [message, setMessage] = useState("");
@@ -62,7 +61,7 @@ export const Chats = () => {
 
   const getDriverId = async function () {
     try {
-      let token = Cookies.get("token");
+      let token = localStorage.getItem("token");
       let decode = jwtDecode(token);
       setDriverId(decode.user.id);
     } catch (error) {

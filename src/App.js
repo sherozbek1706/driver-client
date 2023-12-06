@@ -1,4 +1,3 @@
-import Cookies from "js-cookie";
 import "./App.css";
 import { Router } from "./shared";
 import React, { useEffect } from "react";
@@ -13,7 +12,7 @@ export const socket = io.connect(api);
 export const Context = React.createContext();
 function App() {
   const context_data = {
-    lang: Cookies.get("language"),
+    lang: localStorage.getItem("language"),
   };
 
   return (

@@ -1,4 +1,3 @@
-import Cookies from "js-cookie";
 import jwt_decode from "jwt-decode";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -7,7 +6,6 @@ import {
   errorHandler,
   error_notify,
   success_notify,
-  warning_notify,
 } from "../../shared";
 import "./login.css";
 export const Login = () => {
@@ -28,9 +26,9 @@ export const Login = () => {
     axiosInstance
       .post("/driver/login", driver)
       .then(({ data: { data } }) => {
-        Cookies.set("token", data);
+        localStorage.setItem("token", data);
         const decode = jwt_decode(data);
-        Cookies.set("role", decode.user.role);
+        localStorage.setItem("role", decode.user.role);
         success_notify("Login qildingiz!");
         setTimeout(() => {
           window.location.assign("/");
