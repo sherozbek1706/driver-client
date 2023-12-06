@@ -7,9 +7,7 @@ export const ProtectRouteAdmin = ({ children }) => {
   useEffect(() => {
     try {
       const token = localStorage.getItem("admin_token");
-      const role = localStorage.getItem("role");
       const decoded = jwt_decode(token);
-      const userRole = decoded.user.role;
 
       //if (userRole !== "admin" && userRole !== "super_admin") {
       // navigate("/dashboard/login");
