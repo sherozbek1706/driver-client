@@ -30,9 +30,7 @@ export const Bar = () => {
 
   const onClickLogOutBtn = () => {
     info_notify("Tizimdan chiqdingiz!");
-    Object.keys(localStorage.getItem()).forEach((cookieName) => {
-      localStorage.removeItem(cookieName);
-    });
+    localStorage.clear();
     setTimeout(() => {
       window.location.assign("/");
     }, 1000);
