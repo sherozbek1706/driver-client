@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.97c20872.css",
-    "main.js": "/static/js/main.ef30b6b2.js",
+    "main.js": "/static/js/main.dc4bb83b.js",
     "static/media/ringtong_order.wav": "/static/media/ringtong_order.8fe3317f5ff8f0128b9a.wav",
     "static/media/done.mp3": "/static/media/done.65636d3d878606e9567c.mp3",
     "index.html": "/index.html",
     "main.97c20872.css.map": "/static/css/main.97c20872.css.map",
-    "main.ef30b6b2.js.map": "/static/js/main.ef30b6b2.js.map"
+    "main.dc4bb83b.js.map": "/static/js/main.dc4bb83b.js.map"
   },
   "entrypoints": [
     "static/css/main.97c20872.css",
-    "static/js/main.ef30b6b2.js"
+    "static/js/main.dc4bb83b.js"
   ]
 }
